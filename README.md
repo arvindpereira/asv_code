@@ -8,15 +8,24 @@ This is a portion of the code used on USC's robotic boats or Autonomous Surface 
 
 Designed to compile on a standard Linux distribution such as Debian/Ubuntu/Red Hat etc. Requires gcc and g++ at a minimum. Will not compile on OS-X or Windows since they use different APIs for supporting shared memory and message queues.
 
-roboduck - GNC code including PIDs etc. (written in C/C++ by Arvind Pereira) 
+roboduck - GNC code including PIDs etc. (written in C/C++ by Arvind Pereira)
+
 common   - common code such as timers, shared memory access routines and so on which are common to everything (mostly written by Arvind Pereira)
+
 eKalmanFilter - Kalman Filtering code (mostly written by Srikanth Saripalli for the USC helicopter, but was modified for use on the USC boats by Arvind Pereira)
+
 gpsReader - GPS reader for NMEA GPS devices. (originally written by Buyoon Jung and extended by Arvind Pereira)
+
 RoboduckServer - Server used to communicate data back and forth between a C# GUI (entirely written by Arvind Pereira)
+
 rudderControl  - code to interface with the rudder actuator
+
 scripts  - Scripts that start everything up on the robot
+
 tcmReader - TCM compass reader
+
 windClient - Wind Sensor server (used to transmit data back and forth)
+
 xbowReader - CrossBow IMU reader
 
 The system is designed to use shared-memory for data to be shared between processes.
