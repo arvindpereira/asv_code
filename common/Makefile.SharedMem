@@ -1,0 +1,28 @@
+# Author Arvind
+# Shared Memory Library
+#
+
+CC = g++
+LD = $(CC)
+
+CFLAGS = -c -O2
+
+SRCS = do_share.cpp
+HDRS = do_share.h
+OBJS = do_share.o
+INCLUDES = -I. -I..
+LIBSDIR =
+LIBSHM = libshm.a
+LDFLAGS = -L$(LIBSDIR)
+INSTALLDIR = ../../bin
+all: $(LIBSHM)
+$(LIBSHM): $(SRCS) $(HDRS)
+	$(CC) $(CFLAGS) $(INCLUDES) do_share.cpp
+	ar -cr $(LIBSHM) $(OBJS)
+	ranlib $(LIBSHM)
+
+install:
+	make; cp $(LIBSHM) $(INSTALLDIR)
+
+clean:
+	rm -f $(OBJS) $(LIBSHM) *~

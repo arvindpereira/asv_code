@@ -1,0 +1,26 @@
+# Author Arvind
+# Timing Library
+
+CC = g++
+LD = $(CC)
+
+CFLAGS = -c -O2 
+
+SRCS = ms_timer.c
+HDRS = ms_timer.h
+OBJS = ms_timer.o
+INCLUDES = -I. -I..
+LIBSDIR =
+LIBTIMER = libmstimer.a 
+LDFLAGS = -L$(LIBSDIR) 
+INSTALLDIR = ../../bin
+all: $(LIBTIMER)
+$(LIBTIMER): $(SRCS) $(HDRS)
+	$(CC) $(CFLAGS) $(INCLUDES) ms_timer.c
+	ar -cr $(LIBTIMER) $(OBJS)
+	ranlib $(LIBTIMER)
+
+install:
+	make; cp $(LIBTIMER) $(INSTALLDIR)
+clean:
+	rm -f $(OBJS) $(LIBTIMER) *~

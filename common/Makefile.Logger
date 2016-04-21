@@ -1,0 +1,28 @@
+# Author Arvind
+# Shared Memory Library
+#
+
+CC = g++
+LD = $(CC)
+
+CFLAGS = -c -O2
+
+SRCS = logger.cpp
+HDRS = logger.h 
+OBJS = logger.o
+INCLUDES = -I. -I..
+LIBSDIR =
+LIBLOGGER = liblogger.a
+LDFLAGS = -L$(LIBSDIR)
+INSTALLDIR = ../../bin
+all: $(LIBLOGGER)
+$(LIBLOGGER): $(SRCS) $(HDRS)
+	$(CC) $(CFLAGS) $(INCLUDES) logger.cpp
+	ar -cr $(LIBLOGGER) $(OBJS)
+	ranlib $(LIBLOGGER)
+
+install:
+	make; cp $(LIBLOGGER) $(INSTALLDIR)
+
+clean:
+	rm -f $(OBJS) $(LIBLOGGER) *~
