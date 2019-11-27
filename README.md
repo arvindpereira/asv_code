@@ -4,6 +4,8 @@
 Code used on USC's robotic boats (Roboducks a.k.a. Q-boats)
 -----------------------------------------------------------
 
+![alt text](Rduck2atRedondoBeach.jpeg?raw=true "USC Autonomous Surface Vehicle at Redondo Beach Marina during a field test") 
+
 This is a portion of the code used on USC's robotic boats or Autonomous Surface Vehicles. Each directory contains code which is specific to a particular module which needs to be running on the vehicle.
 
 Designed to compile on a standard Linux distribution such as Debian/Ubuntu/Red Hat etc. Requires gcc and g++ at a minimum. Will not compile on OS-X or Windows since they use different APIs for supporting shared memory and message queues.
